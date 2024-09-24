@@ -27,36 +27,6 @@ A demonstration of the web-based automatic answer checker with different functio
 - **User Interface:** Students can answer questions and receive immediate feedback.
 - **Admin Interface:** Admins can manage questions and review submitted answers.
 
-## Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/automatic-answer-checker.git
-   cd automatic-answer-checker
-   ```
-
-2. **Create a virtual environment (optional but recommended):**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   Make sure `requirements.txt` contains:
-   ```
-   flask
-   sentence-transformers
-   ```
-
-4. **Set up necessary files and directories:**
-   - Create a `data` directory in the project root.
-   - Add `questions.txt` and `model_answers.txt` files inside the `data` directory.
-   - Populate `questions.txt` and `model_answers.txt` with your initial questions and model answers (one per line).
-
 ## Usage
 
 1. **Run the Flask application:**
