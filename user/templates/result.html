@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyNjE3MjIx/particlesjs-examples.gif');
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto; /* Center align the container */
+            text-align: left; /* Align text inside container to the left */
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for container */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners for container */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .failed {
+            color: red;
+        }
+        .passed {
+            color: green;
+        }
+        .excellent {
+            color: blue;
+        }
+        .container p, .container a {
+            margin-bottom: 10px; /* Adjust margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Marks Obtained</th>
+            </tr>
+            {% for entry in result_table %}
+            <tr>
+                <td>{{ entry.question }}</td>
+                <td>{{ entry.marks_obtained }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% if percentage_achieved < 50 %}
+            <p class="failed">Sorry, you are failed. Percentage Achieved: {{ percentage_achieved|round(2) }}%</p>
+        {% elif percentage_achieved >= 50 and percentage_achieved < 90 %}
+            <p class="passed">Congratulations, you have passed. Percentage Achieved: {{ percentage_achieved|round(2) }}%</p>
+        {% elif percentage_achieved >= 90 %}
+            <p class="excellent">Excellent! Percentage Achieved: {{ percentage_achieved|round(2) }}%</p>
+        {% endif %}
+
+        <a href="/user">Restart</a>
+    </div>
+</body>
+</html>

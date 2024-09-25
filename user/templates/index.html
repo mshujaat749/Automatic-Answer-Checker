@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automatic Answer Checker - Questions List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensures the content is vertically centered */
+            margin: 0;
+            text-align: center; /* Center-align text within body */
+            background-image: url('https://static.vecteezy.com/system/resources/previews/007/919/926/non_2x/abstract-shiny-blue-cylinder-pedestal-podium-sci-fi-blue-abstract-room-with-glowing-hanging-neon-lamp-lighting-rendering-3d-shape-product-display-mockup-futuristic-scene-stage-for-showcase-vector.jpg'); /* Replace with your image path */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of background image */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Example: Set font family */
+        }
+        h1 {
+            margin-top: 10px; /* Adjust top margin as needed */
+            color: white; /* Set text color to white */
+        }
+        .questions-list-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .questions-list {
+            background-color: rgba(255, 255, 255, 0.8); /* Example: Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 300px; /* Adjust the maximum width as needed */
+            margin: 10px; /* Example: Add margin to questions list */
+        }
+        .questions-list ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0;
+        }
+        .questions-list li {
+            margin-bottom: 20px; /* Adjust spacing between questions */
+        }
+        .questions-list textarea {
+            width: 100%; /* Ensure textarea spans full width */
+            margin-top: 10px; /* Example: Add margin to textarea */
+            resize: vertical; /* Allow vertical resizing */
+        }
+        .questions-list button {
+            background-color: rgba(76, 175, 80, 0.1); /* Green background with full opacity */
+            color: white;
+            border: none;
+            padding: 15px 30px; /* Increase padding for a bigger button */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 58px; /* Increase font size for better visibility */
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Adjust margin to separate from other elements */
+        }
+
+        .questions-list button:hover {
+            background-color: rgba(69, 160, 73, 0.8); /* Darker green with 0.8 opacity on hover */
+        }
+        a {
+            color: white; /* Set link text color to white */
+            text-decoration: none; /* Remove underline */
+            margin-top: 20px; /* Example: Add margin to link */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>TEST START</h1>
+    <form action="/submit" method="POST">
+        <div class="questions-list-container">
+            {% for index in range(questions|length) %}
+            <div class="questions-list">
+                <ul>
+                    <li>
+                        <p>{{ questions[index] }}</p>
+                        <textarea name="student_answer_{{ index }}" rows="4" cols="50"></textarea><br><br>
+                    </li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Submit Answers</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

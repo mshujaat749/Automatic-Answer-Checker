@@ -1,0 +1,4 @@
+What is machine learning?
+Why is feature scaling important?
+What is overfitting in machine learning?
+what is supervised machine learning?

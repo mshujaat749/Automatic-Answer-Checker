@@ -1,0 +1,4 @@
+Enables systems to learn from data and make predictions
+Ensures equal contribution of features in model training
+Model learns training data too well, not generalizing to new data.
+it work with labelled data

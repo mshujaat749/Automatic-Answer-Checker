@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automatic Answer Checker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://cdn.dribbble.com/users/12112036/screenshots/18570975/media/da2c77d952f558c72631464f69c482a2.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .panel {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .panel:hover {
+            transform: scale(1.05);
+        }
+        .panel a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .panel img {
+            width: 100px; /* Adjust the size of the GIF image */
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        .animated-text {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 45px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange; /* Adjust cursor style as needed */
+            animation: typing 6s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 50%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <a href="/admin">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Sock_puppetry.gif" alt="Admin GIF">
+            Admin Panel
+        </a>
+    </div>
+    <div class="panel">
+        <a href="/user">
+            <img src="https://media2.giphy.com/media/JQRws1d6KGPIPmzLUa/giphy.gif?cid=6c09b952acdd7use5quu9t4l4ugkuxq5p56z1y3r1jwx84pz&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="User GIF">
+            User Panel
+        </a>
+    </div>
+
+    <div class="animated-text">
+        Welcome to the Automatic Answer Checker
+    </div>
+</body>
+</html>

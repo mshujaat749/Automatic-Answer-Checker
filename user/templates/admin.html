@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Interface - Manage Questions and Answers</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://petapixel.com/assets/uploads/2023/09/7-giff.gif');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency if needed */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li form {
+            display: inline;
+            margin: 0;
+        }
+        .back-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #800080;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .back-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Interface</h1>
+        <form action="/add_qa" method="POST">
+            <label for="question">Question:</label><br>
+            <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
+
+            <label for="model_answer">Model Answer:</label><br>
+            <textarea id="model_answer" name="model_answer" rows="4" cols="50"></textarea><br><br>
+
+            <button type="submit">Add Question and Answer</button>
+        </form>
+        <h2>Existing Questions</h2>
+        <ul>
+            {% for i in range(questions|length) %}
+            <li>
+                {{ questions[i] }}
+                <form action="/remove_qa" method="POST" style="display:inline;">
+                    <input type="hidden" name="index" value="{{ i }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/" class="back-link">Back to Home</a>
+</body>
+</html>
