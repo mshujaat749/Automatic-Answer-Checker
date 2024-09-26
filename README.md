@@ -1,4 +1,4 @@
-# Automatic Answer Checker
+# Automatic Subjective Answer Checker
 
 This project is a web-based application that uses the Sentence-BERT model to compare student answers against model answers, providing automated grading and feedback. It's built using Flask for the backend and leverages `sentence-transformers` for semantic similarity assessment.
 ## Table of Contents
